@@ -1,0 +1,19 @@
+
+#header {
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; */
+  background-size: cover;
+  background-image: url(../../../assets/images/image_book2.jpeg) ;
+  padding: 5%;
+    }
+
+
+/* Increase the font size of the heading */
+h1, p {
+  font-family: 'Lobster', cursive;
+  font-size: 275%;
+  text-align: center;
+  color: whitesmoke;
+  text-decoration-line: none;
+}
