@@ -1,17 +1,17 @@
 <main class="grid">
-  <div *ngFor="let book of listBooks">
+  <div *ngFor="let book of  bookList$ | async">
     <article >
       <img [src]="book.image" alt="Sample photo">
       <div class="text">
         <h3>{{book.title}}</h3>
-        <p>{{book.description}}</p>
+        <p class="description">{{book.description}}</p>
       </div>
     </article>
   </div>
-  <div *ngIf="myData$|async as myData">
+  <!-- <div *ngIf="myData$|async as myData">
     <h1>
 {{myData}}
     </h1>
-  </div>
+  </div> -->
 
 </main>

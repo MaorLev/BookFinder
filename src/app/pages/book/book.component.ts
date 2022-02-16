@@ -8,16 +8,9 @@ import { Observable } from 'rxjs';
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css']
 })
-export class BookComponent implements OnInit {
-  listBooks:BookType [] = []
-  myData$!: Observable<string>;
+export class BookComponent {
+  bookList$: Observable<BookType[]> = this.service.getBookList();
+  word$: Observable<string | undefined> = this.service.serverDataSubject$;
+
   constructor(private service: BookService) { }
-
-  ngOnInit(): void {
-    debugger;
-      this.service.getBook().subscribe((d: any) => {
-        this.listBooks =  d});
-        this.myData$ = this.service.serverDataSubject$;
-  }
-
 }

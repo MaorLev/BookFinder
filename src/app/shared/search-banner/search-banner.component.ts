@@ -7,13 +7,21 @@ import { BookService } from 'src/app/pages/book/book.service';
   styleUrls: ['./search-banner.component.css']
 })
 export class SearchBannerComponent implements OnInit {
+  _value!: string
+  public set value(v: string) {
+    this.service.setQueryTerms(v)
+    this._value = v
+  }
+  public get value() {
+    return this._value
+  }
 
   constructor(private service: BookService) { }
 
   ngOnInit(): void {
   }
-  setData(word:string){
-    this.service.setServerData(word);
+  setData(word: string) {
+    this.service.setQueryWord(word);
   }
 
 }
