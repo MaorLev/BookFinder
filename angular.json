@@ -13,7 +13,7 @@
           "strict": true
         }
       },
-      "root": "BookFinder",
+      "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
