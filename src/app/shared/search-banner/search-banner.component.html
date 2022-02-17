@@ -1,28 +1,28 @@
 <div class="wrap">
   <div class="search">
-     <input #input type="text" class="searchTerm" placeholder="What are you looking for?">
+     <input #input type="text" class="searchTerm" placeholder="Find your book by filter">
      <button class="searchButton" (click)="setData(input.value)">
        <i class="fa fa-search"></i>
     </button>
   </div>
 
-  <ul class="pagination">
+  <ul class="group-radio">
     <div class="radio-toolbar">
       <li>
         <input [(ngModel)]="value" type="radio" id="radiointitle" name="intitle" value="intitle" checked>
-        <label for="radiointitle">intitle</label>
+        <label for="radiointitle">By Title</label>
       </li>
       <li>
         <input [(ngModel)]="value" type="radio" id="radioinauthor" name="inauthor" value="inauthor">
-        <label for="radioinauthor">inauthor</label>
+        <label for="radioinauthor">By Author</label>
       </li>
       <li>
         <input [(ngModel)]="value" type="radio" id="radioinpublisher" name="inpublisher" value="inpublisher">
-        <label for="radioinpublisher">inpublisher</label>
+        <label for="radioinpublisher">By Publisher</label>
       </li>
       <li>
         <input [(ngModel)]="value" type="radio" id="radiosubject" name="subject" value="subject">
-        <label for="radiosubject">subject</label>
+        <label for="radiosubject">By Subject</label>
       </li>
     </div>
 
@@ -32,17 +32,5 @@
 </div>
 
 
-
-<!-- <div class="radio-toolbar">
-  <input type="radio" id="radioApple" name="radioFruit" value="apple" checked>
-  <label for="radioApple">Apple</label>
-
-  <input type="radio" id="radioBanana" name="radioFruit" value="banana">
-  <label for="radioBanana">Banana</label>
-
-  <input type="radio" id="radioOrange" name="radioFruit" value="orange">
-  <label for="radioOrange">Orange</label>
-</div>
-<p>&nbsp;</p> -->
 
 

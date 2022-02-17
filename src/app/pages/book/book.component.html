@@ -1,17 +1,23 @@
-<main class="grid">
-  <div *ngFor="let book of  bookList$ | async">
-    <article >
-      <img [src]="book.image" alt="Sample photo">
-      <div class="text">
-        <h3>{{book.title}}</h3>
-        <p class="description">{{book.description}}</p>
+<main class="wrap" *ngIf="(bookList$ | async) as model">
+  <ng-container class="wrap_body" *ngIf="model?.list?.length; else noBooksTmpl">
+    <section class="main--container">
+      <div *ngFor="let book of model.list ">
+        <article class="card">
+          <img [src]="book.image" alt="book image"
+            onerror="this.onerror=null;this.src='../../../assets/images/fake-img.jpg';" />
+          <article class="content">
+            <h3>{{book.title}}</h3>
+            <p class="description">
+              {{book.description}}
+            </p>
+          </article>
+        </article>
       </div>
-    </article>
-  </div>
-  <!-- <div *ngIf="myData$|async as myData">
-    <h1>
-{{myData}}
-    </h1>
-  </div> -->
+    </section>
+  </ng-container>
+
+  <ng-template #noBooksTmpl>
+    <h3 *ngIf="model.word">No books found for "{{model.word}}"</h3>
+  </ng-template>
 
 </main>

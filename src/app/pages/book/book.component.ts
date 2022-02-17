@@ -1,7 +1,8 @@
 import { BookService } from './book.service';
 import { Component, OnInit } from '@angular/core';
-import { BookType } from './book-type';
+import { BookType} from './book-type';
 import { Observable } from 'rxjs';
+import { BookViewModel } from 'src/app/model/book-view-model';
 
 @Component({
   selector: 'app-book',
@@ -9,8 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./book.component.css']
 })
 export class BookComponent {
-  bookList$: Observable<BookType[]> = this.service.getBookList();
-  word$: Observable<string | undefined> = this.service.serverDataSubject$;
+  bookList$: Observable<BookViewModel> = this.service.getBookModel();
 
   constructor(private service: BookService) { }
 }
